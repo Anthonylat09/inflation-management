@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.group</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>InflationManagementBackEnd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Budget app</name>
 	<description>Back end for a budget app</description>
