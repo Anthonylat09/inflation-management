@@ -1,4 +1,4 @@
-package com.group.demo;
+package com.runner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

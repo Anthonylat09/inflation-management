@@ -1,4 +1,4 @@
-package com.group.demo;
+package com.runner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
