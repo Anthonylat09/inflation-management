@@ -1,28 +1,26 @@
 package com.entities;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
+@Entity
+@Table(name = "User")
 public class User {
+    @Id
+    @Column(name = "id_user", nullable = false)
+    private Long idUser;
+    @OneToMany
+    ArrayList<Transaction> userTransactions;
+    @Column(name = "nom")
     String nom;
+    @Column(name = "prenom")
     String prenom;
-    Float budget;
-
-    public User(String nom, String prenom, Float budget) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.budget = budget;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", budget=" + budget +
-                '}';
-    }
+    @Column(name = "budget")
+    Double budget;
 
 }

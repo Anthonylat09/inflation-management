@@ -1,5 +1,6 @@
 package com.entities;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,29 +8,22 @@ import java.util.Date;
 
 @Setter
 @Getter
+@Entity
+@Table(name = "Transaction")
 public class Transaction {
+    @Id
+    @Column(name = "id_transaction", nullable = false)
+    private Long idTransaction;
+    @Column(name = "nom_transaction")
     String nomTransaction;
+    @Column(name = "est_revenu?")
     Boolean estRevenu;
+    @Column(name = "montant")
     Double montantTransaction;
+    @ManyToOne
+    @JoinColumn(name = "categorie")
     Category categorieTransaction;
+    @Column(name = "date")
     Date dateTransaction;
 
-    public Transaction(String nomTransaction, Boolean estRevenu, Double montantTransaction, Category categorieTransaction, Date dateTransaction) {
-        this.nomTransaction = nomTransaction;
-        this.estRevenu = estRevenu;
-        this.montantTransaction = montantTransaction;
-        this.categorieTransaction = categorieTransaction;
-        this.dateTransaction = dateTransaction;
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "nomTransaction='" + nomTransaction + '\'' +
-                ", estRevenu=" + estRevenu +
-                ", montantTransaction=" + montantTransaction +
-                ", categorieTransaction=" + categorieTransaction +
-                ", dateTransaction=" + dateTransaction +
-                '}';
-    }
 }
