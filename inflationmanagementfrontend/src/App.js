@@ -1,10 +1,11 @@
 import './App.css';
-import BarreNavigationComponent from './components/barreNavigation.component';
+import Register from "./pages/register";
 
 function App() {
   return (
+
     <div className="App">
-      <BarreNavigationComponent></BarreNavigationComponent>
+      <Register></Register>
     </div>
   );
 }
