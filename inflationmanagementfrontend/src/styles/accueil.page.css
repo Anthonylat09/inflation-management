@@ -1,0 +1,28 @@
+section {
+    display: flex;
+}
+
+.blobs {
+    width: 40vw;
+}
+
+.blobs_div {
+    position: relative;
+}
+
+.blobs_div img:first-child {
+    top: 30px;
+    left: 25px;
+    position: absolute;
+}
+
+.side_text {
+    margin: auto;
+    width: 800px;
+    font-size: 28px;
+}
+
+#logo {
+    width: 44vw;
+    margin: 0 28vw 0 28vw;
+}

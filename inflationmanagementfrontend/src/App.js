@@ -1,10 +1,10 @@
 import './App.css';
-import BarreNavigationComponent from './components/barreNavigation.component';
+import AccueilPage from './pages/accueil.page';
 
 function App() {
   return (
     <div className="App">
-      <BarreNavigationComponent></BarreNavigationComponent>
+      <AccueilPage></AccueilPage>
     </div>
   );
 }
