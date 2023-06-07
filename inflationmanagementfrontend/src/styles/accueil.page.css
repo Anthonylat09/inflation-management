@@ -3,7 +3,7 @@ section {
 }
 
 .blobs {
-    width: 40vw;
+    width: 36vw;
 }
 
 .blobs_div {
@@ -12,17 +12,17 @@ section {
 
 .blobs_div img:first-child {
     top: 30px;
-    left: 25px;
+    left: 5px;
     position: absolute;
 }
 
 .side_text {
     margin: auto;
-    width: 800px;
+    width: 780px;
     font-size: 28px;
 }
 
 #logo {
     width: 44vw;
-    margin: 0 28vw 0 28vw;
+    margin: 0 auto 0 28vw;
 }

@@ -6,7 +6,7 @@ export default function AccueilPage(){
         <div className="page_accueil">
             <BarreNavigationComponent/>
             <img src="http://localhost:3000/logo.svg" id="logo"/>
-            <section className="first_section">
+            <section>
                 <div className="blobs_div">
                     <img src="http://localhost:3000/undraw_personal_finance_re_ie6k.svg"/>
                     <img src="http://localhost:3000/blob.svg" className="blobs"/>
@@ -17,7 +17,7 @@ export default function AccueilPage(){
                     Faites face aux défis de l'inflation en prenant des décisions éclairées pour optimiser votre budget.</p>
                 </div>
             </section>
-            <section className="second_section">
+            <section>
                 <div className="side_text">
                     <h2>Découvrez les statistiques essentielles</h2>
                     <p>Notre application vous fournit une analyse détaillée de vos dépenses , vous permettant ainsi de visualiser
