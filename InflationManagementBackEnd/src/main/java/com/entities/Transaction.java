@@ -12,6 +12,7 @@ import java.util.Date;
 @Table(name = "Transaction")
 public class Transaction {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_transaction", nullable = false)
     private Long idTransaction;
     @Column(name = "nom_transaction")

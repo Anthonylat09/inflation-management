@@ -12,6 +12,7 @@ import java.util.ArrayList;
 @Table(name = "User")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user", nullable = false)
     private Long idUser;
     @OneToMany
