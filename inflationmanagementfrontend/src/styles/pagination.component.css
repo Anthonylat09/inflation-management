@@ -1,0 +1,27 @@
+#pagination {
+    display: flex;
+    background-color: #EF9F40;
+    height: 50px;
+}
+
+#pagination > * {
+    margin: auto;
+}
+
+button {
+    background-color: #EF9F40;
+    border: none;
+    cursor: pointer;
+}
+
+button > * {
+    font-size: 30px;
+}
+
+#right_button {
+    margin-right: 20px;
+}
+
+#left_button {
+    margin-left: 20px;
+}
