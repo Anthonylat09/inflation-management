@@ -1,0 +1,15 @@
+.barreTr_div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    background-color: #EF9F40;
+    height: 200px;
+    font-size: 22px;
+    align-items: center;
+    text-align: center;
+}
+
+
+span:hover {
+    cursor: pointer;
+}
