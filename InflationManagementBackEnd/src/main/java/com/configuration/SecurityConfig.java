@@ -1,6 +1,7 @@
 package com.configuration;
 
 import com.interceptors.JwtAuthenticationFilter;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,12 +20,10 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain doFilter(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain doFilter(@NotNull HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .csrf().disable()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+                .csrf(csrf -> csrf.disable())
+                .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
