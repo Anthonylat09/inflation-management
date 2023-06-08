@@ -1,6 +1,5 @@
 .barreTr_div {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     flex-direction: row;
     background-color: #EF9F40;
     height: 200px;
@@ -9,7 +8,30 @@
     text-align: center;
 }
 
-
+.nombres_div {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.depenses_div {
+    margin-right: auto;
+    margin-left: auto;
+}
+.mois_div {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FF7300;
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 300px;
+    border-radius: 25px;
+}
 span:hover {
     cursor: pointer;
 }

@@ -9,7 +9,6 @@
 }
 
 .transactions_div {
-    display: flex;
     flex-direction: row;
     background-color: #D9D9D9;
     height: auto;

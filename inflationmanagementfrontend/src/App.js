@@ -1,14 +1,13 @@
 import './App.css';
 import AccueilPage from './pages/accueil.page';
-import BarreNavigationComponent from './components/barreNavigation.component';
+import TransactionPage from './pages/transactions';
 
 function App() {
-    return (
-        <div className="App">
-            <BarreNavigationComponent/>
-            <AccueilPage></AccueilPage>
-        </div>
-    );
+  return (
+    <div className="App">
+      <TransactionPage></TransactionPage>
+    </div>
+  );
 }
 
 export default App;
