@@ -1,10 +1,8 @@
-import BarreNavigationComponent from '../components/barreNavigation.component';
 import '../styles/accueil.page.css';
 
 export default function AccueilPage(){
     return(
         <div className="page_accueil">
-            <BarreNavigationComponent/>
             <img src="http://localhost:3000/logo.svg" id="logo"/>
             <section>
                 <div className="blobs_div">

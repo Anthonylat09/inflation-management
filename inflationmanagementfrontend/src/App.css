@@ -3,3 +3,45 @@
   background-repeat: repeat;
   min-height: 100vh;
 }
+
+.separator {
+  height: 0;
+  width: 280px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  margin: 8px auto 8px auto;
+}
+
+.gray_separator {
+  border-color: #8E8E8E;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  margin-top: auto;
+  margin-left: 5px;
+}
+
+.red_circle {
+  background-color: red;
+  border-color: red;
+}
+
+.blue_circle {
+  background-color: #2476C3;
+  border-color: #2476C3;
+}
+
+.orange_circle {
+  background-color: #FF7300;
+  border-color: #FF7300;
+}
+
+.green_circle {
+  background-color: #24C35A;
+  border-color: #24C35A;
+}
