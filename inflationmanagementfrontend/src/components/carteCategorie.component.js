@@ -11,7 +11,7 @@ export default function CarteCategorieComponent(props){
             {/*            <div className={`circle ${sous_cat.couleur}_circle` }></div>*/}
             {/*            <span>{sous_cat.nom}</span>*/}
             {/*        </div>*/}
-            {/*        <div className="separator gray"></div>*/}
+            {/*        <div className="separator gray_separator"></div>*/}
             {/*    </div>*/}
             {/*)}*/}
             <div className="row">
@@ -19,21 +19,21 @@ export default function CarteCategorieComponent(props){
                     <div className="circle red_circle"></div>
                     <span>Epicerie</span>
                 </div>
-                <div className="separator gray"></div>
+                <div className="separator gray_separator"></div>
             </div>
             <div className="row">
                 <div>
                     <div className="circle green_circle"></div>
                     <span>Restauration</span>
                 </div>
-                <div className="separator gray"></div>
+                <div className="separator gray_separator"></div>
             </div>
             <div className="row">
                 <div>
                     <div className="circle orange_circle"></div>
                     <span>Loyer</span>
                 </div>
-                <div className="separator gray"></div>
+                <div className="separator gray_separator"></div>
             </div>
         </div>
     );
