@@ -1,0 +1,19 @@
+.ajout_transaction_button {
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: 50px;
+    font-size: 22px;
+    align-items: center;
+    margin: 15px auto auto auto;
+}
+
+.transactions_div {
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: auto;
+    font-size: 22px;
+    align-items: center;
+    margin: 15px auto auto auto;
+}
