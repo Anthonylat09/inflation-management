@@ -1,4 +1,5 @@
 import '../styles/barreTransaction.component.css'
+import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai';
 
 export default function BarreTransactionComponent() {
     return (
@@ -20,10 +21,16 @@ export default function BarreTransactionComponent() {
                     </span>
                 </div>
             </div>
-            <div className="mois_div">
+            <div className="mois_div">  
+                <button id="left_button">
+                    <AiOutlineArrowLeft/>
+                </button>
                 <span>Juin 2023<br/>
                 5 transactions
                 </span>
+                <button id="right_button">
+                    <AiOutlineArrowRight/>
+                </button>
             </div>
         </div>
     );
