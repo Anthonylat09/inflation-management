@@ -7,7 +7,7 @@
     justify-items: center;
 }
 
-section {
+.budgetSection {
     display: flex;
     flex-direction: column;
     background-color: #D5A55E;
