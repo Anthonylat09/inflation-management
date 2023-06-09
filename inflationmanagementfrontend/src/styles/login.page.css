@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 240px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: lightgray;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 400px;
+    font-size: 18px;
+}
+
+.submit-button {
+    align-self: center;
+    margin-top: 10px;
+    background: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    width: 400px;
+    font-size: 18px;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BarreNavigationComponent from "../components/barreNavigation.component";
-import logo from '../logo.svg'; // Importez votre logo ici
+import logo from '../logo.svg'; // Import du logo ici
+import '../styles/register.page.css'; // Import du fichier CSS externe
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
@@ -32,52 +33,52 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-          <img src={logo} alt="Logo" style={{ width: '200px', height: '240px' }} /> {/* Ajoutez votre logo ici */}
-        </div>
-
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ background: 'lightgray', padding: '40px', borderRadius: '15px', textAlign: 'center' }}>
-            <div style={{ marginBottom: '20px' }}>
-              <input
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={handleEmailChange}
-                required
-                style={{ border: '1px solid gray', borderRadius: '10px', padding: '15px', textAlign: 'center', width: '400px', fontSize: '18px' }}
-              />
-            </div>
-
-            <div style={{ marginBottom: '20px' }}>
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePasswordChange}
-                required
-                style={{ border: '1px solid gray', borderRadius: '10px', padding: '15px', textAlign: 'center', width: '400px', fontSize: '18px' }}
-              />
-            </div>
-
-            <div>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={handleConfirmPasswordChange}
-                required
-                style={{ border: '1px solid gray', borderRadius: '10px', padding: '15px', textAlign: 'center', width: '400px', fontSize: '18px' }}
-              />
-            </div>
+      <div>
+        <div className="container">
+          <div className="logo">
+            <img src={logo} alt="Logo" />
           </div>
 
-          <button type="submit" style={{ alignSelf: 'center', marginTop: '10px', background: '#ff7300', color: 'white', border: 'none', borderRadius: '20px', padding: '15px', width: '400px', fontSize: '18px' }}>Submit</button>
-        </form>
+          <form onSubmit={handleSubmit} className="form">
+            <div className="card">
+              <div className="form-field">
+                <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    required
+                    className="input"
+                />
+              </div>
+
+              <div className="form-field">
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
+                    className="input"
+                />
+              </div>
+
+              <div className="form-field">
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={handleConfirmPasswordChange}
+                    required
+                    className="input"
+                />
+              </div>
+            </div>
+
+            <button type="submit" className="submit-button">Submit</button>
+          </form>
+        </div>
       </div>
-    </div>
   );
 };
 
