@@ -5,10 +5,21 @@
     padding: 10px;
 }
 
-.circle + span {
+.circle + span, .ajout {
     margin: auto;
 }
 
 .row > div:first-child {
     display: flex;
 }
+
+.icon_plus {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-left: 5px;
+}
+
+/*.ajout {*/
+/*    margin-left: 50px;*/
+/*}*/

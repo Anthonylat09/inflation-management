@@ -1,4 +1,5 @@
 import '../styles/carteCategorie.component.css';
+import {AiOutlinePlusCircle} from 'react-icons/ai';
 
 export default function CarteCategorieComponent(props){
     return(
@@ -34,6 +35,12 @@ export default function CarteCategorieComponent(props){
                     <span>Loyer</span>
                 </div>
                 <div className="separator gray_separator"></div>
+            </div>
+            <div className="row">
+                <div>
+                    <AiOutlinePlusCircle className="icon_plus"/>
+                    <span className={"ajout"}>Ajouter une sous-catégorie</span>
+                </div>
             </div>
         </div>
     );
