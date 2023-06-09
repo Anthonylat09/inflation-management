@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BarreNavigationComponent from "../components/barreNavigation.component";
 import logo from '../logo.svg'; // Importez votre logo ici
 
-const Register = () => {
+const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -33,10 +33,6 @@ const Register = () => {
 
   return (
     <div>
-      <div>
-        <BarreNavigationComponent></BarreNavigationComponent>
-      </div>
-
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', position: 'relative' }}>
         <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }}>
           <img src={logo} alt="Logo" style={{ width: '200px', height: '240px' }} /> {/* Ajoutez votre logo ici */}
@@ -85,4 +81,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterPage;

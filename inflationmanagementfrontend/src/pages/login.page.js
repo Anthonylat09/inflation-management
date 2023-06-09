@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import BarreNavigationComponent from "../components/barreNavigation.component";
-import logo from '../logo.svg'; // Importez votre logo ici
+import logo from '../logo.svg';
 
-const Login = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -26,9 +26,7 @@ const Login = () => {
 
   return (
     <div>
-      <div>
-        <BarreNavigationComponent></BarreNavigationComponent>
-      </div>
+
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', position: 'relative' }}>
         <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }}>
@@ -67,4 +65,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
