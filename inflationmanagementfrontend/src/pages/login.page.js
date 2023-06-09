@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import BarreNavigationComponent from "../components/barreNavigation.component";
 import logo from '../logo.svg';
+import { useNavigate } from 'react-router';
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -22,6 +26,8 @@ const LoginPage = () => {
     // Reset the form
     setEmail('');
     setPassword('');
+    navigate("/budget");
+
   };
 
   return (
@@ -58,7 +64,7 @@ const LoginPage = () => {
             </div>
           </div>
 
-          <button type="submit" style={{ alignSelf: 'center', marginTop: '10px', background: '#ff7300', color: 'white', border: 'none', borderRadius: '15px', padding: '15px', width: '400px', fontSize: '18px' }}>Login</button>
+          <button type="submit" style={{ alignSelf: 'center', marginTop: '10px', background: '#ff7300', color: 'white', border: 'none', borderRadius: '15px', padding: '15px', width: '400px', fontSize: '18px' }}>Se connecter</button>
         </form>
       </div>
     </div>
