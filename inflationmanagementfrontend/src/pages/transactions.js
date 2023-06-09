@@ -10,7 +10,7 @@ export default function TransactionPage(){
             <BarreTransactionComponent/>
             <div className='transactions_div'>
                 <div>07/06/2023</div>
-                <div className='separator'></div>
+                <div className='long_separator'></div>
                 <div className='circle blue_circle'></div>
             </div>
             <button className='ajout_transaction_button'>Ajouter une transaction</button>

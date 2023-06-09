@@ -16,3 +16,13 @@
     align-items: center;
     margin: 15px auto auto auto;
 }
+
+.long_separator {
+    height: 0;
+    width: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    margin: 8px auto 8px auto;
+}
