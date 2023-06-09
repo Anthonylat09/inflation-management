@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import BarreNavigationComponent from "../components/barreNavigation.component";
 import logo from '../logo.svg';
 import { useNavigate } from 'react-router';
-
+import '../styles/login.page.css'; // Import du fichier CSS externe
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -27,47 +26,44 @@ const LoginPage = () => {
     setEmail('');
     setPassword('');
     navigate("/budget");
-
   };
 
   return (
-    <div>
-
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-          <img src={logo} alt="Logo" style={{ width: '200px', height: '240px' }} /> {/* Ajoutez votre logo ici */}
-        </div>
-
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ background: 'lightgray', padding: '40px', borderRadius: '10px', textAlign: 'center' }}>
-            <div style={{ marginBottom: '20px' }}>
-              <input
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={handleEmailChange}
-                required
-                style={{ border: '1px solid gray', borderRadius: '10px', padding: '15px', textAlign: 'center', width: '400px', fontSize: '18px' }}
-              />
-            </div>
-
-            <div>
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePasswordChange}
-                required
-                style={{ border: '1px solid gray', borderRadius: '10px', padding: '15px', textAlign: 'center', width: '400px', fontSize: '18px' }}
-              />
-            </div>
+      <div>
+        <div className="container">
+          <div className="logo">
+            <img src={logo} alt="Logo" />
           </div>
 
-          <button type="submit" style={{ alignSelf: 'center', marginTop: '10px', background: '#ff7300', color: 'white', border: 'none', borderRadius: '15px', padding: '15px', width: '400px', fontSize: '18px' }}>Se connecter</button>
-        </form>
+          <form onSubmit={handleSubmit} className="form">
+            <div className="card">
+              <div style={{ marginBottom: '20px' }}>
+                <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    required
+                    className="input"
+                />
+              </div>
+
+              <div>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
+                    className="input"
+                />
+              </div>
+            </div>
+
+            <button type="submit" className="submit-button">Se connecter</button>
+          </form>
+        </div>
       </div>
-    </div>
   );
 };
 
