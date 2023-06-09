@@ -32,6 +32,8 @@ section {
 
 #side_text {
     display: inline-grid;
+    grid-row-gap: 25px;
+    font-size: 30px;
 }
 
 #categ_section {

@@ -1,6 +1,7 @@
 import PaginationComponent from '../components/pagination.component';
 import CarteCategorieComponent from '../components/carteCategorie.component';
 import '../styles/budget.page.css';
+import PieChartUtils from '../utils/pieChart.utils';
 
 export default function BudgetPage(){
     return(
@@ -8,11 +9,13 @@ export default function BudgetPage(){
             <PaginationComponent date={"Juin 2023"}></PaginationComponent>
             <section>
                 <div id="chart_section">
-                    <div id="chart">kjsdfksqd</div>
+                    <div id="chart">
+                        <PieChartUtils series={[44, 55, 13, 43]}></PieChartUtils>
+                    </div>
                     <div id="side_text">
                         <div>Total des dépenses programmées</div>
                         <div>850 €</div>
-                        <div>Haha 3 dsqjknvfgnjfqfknsdqfkqzd</div>
+                        <div>Budget restant: 290€</div>
                     </div>
                 </div>
                 <div id="categ_section">
