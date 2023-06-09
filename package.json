@@ -1,0 +1,7 @@
+{
+  "name": "inflation-management",
+  "version": "1.0.0",
+  "dependencies": {
+    "react-router": "^6.12.1"
+  }
+}
