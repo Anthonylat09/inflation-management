@@ -6,7 +6,7 @@ export default function BudgetPage(){
     return(
         <div>
             <PaginationComponent date={"Juin 2023"}></PaginationComponent>
-            <section>
+            <section id="budgetSection">
                 <div id="chart_section">
                     <div id="chart">kjsdfksqd</div>
                     <div id="side_text">
