@@ -1,0 +1,28 @@
+.ajout_transaction_button {
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: 50px;
+    font-size: 22px;
+    align-items: center;
+    margin: 15px auto auto auto;
+}
+
+.transactions_div {
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: auto;
+    font-size: 22px;
+    align-items: center;
+    margin: 15px auto auto auto;
+}
+
+.long_separator {
+    height: 0;
+    width: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: black;
+    margin: 8px auto 8px auto;
+}

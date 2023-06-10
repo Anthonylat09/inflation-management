@@ -1,0 +1,64 @@
+.barreTr_div {
+    display: grid;
+    flex-direction: row;
+    background-color: #EF9F40;
+    height: 200px;
+    font-size: 22px;
+    align-items: center;
+    text-align: center;
+}
+
+.nombres_div {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.depenses_div {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mois_div {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FF7300;
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 300px;
+    border-radius: 25px;
+}
+
+
+#mois_div > * {
+    margin: auto;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: #FF7300;
+    border: none;
+    cursor: pointer;
+}
+
+button > * {
+    font-size: 30px;
+}
+
+#right_button {
+    margin-right: 20px;
+}
+
+#left_button {
+    margin-left: 20px;
+}
+
