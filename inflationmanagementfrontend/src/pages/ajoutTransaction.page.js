@@ -1,11 +1,27 @@
 import '../styles/ajoutTransaction.page.css'
 import '../App.css'
+import React, { useState } from 'react'
 export default function Page(){
+
+    const [revenueButtonClass, setRevenueButtonClass] = useState('type_transaction inactive');
+    const [depenseButtonClass, setDepenseButtonClass] = useState('type_transaction active');
+
+    function handleRevenueClick(e) {
+        e.preventDefault();
+        setRevenueButtonClass('type_transaction active');
+        setDepenseButtonClass('type_transaction inactive')
+    }
+
+    function handleDepenseClick(e) {
+        e.preventDefault();
+        setRevenueButtonClass('type_transaction inactive');
+        setDepenseButtonClass('type_transaction active')
+    }
     return(
         <div className="page_transaction">
             <div className="type_transaction_div">
-                <button className='type_transaction active'> Dépense</button>
-                <button className='type_transaction inactive'> Revenus</button>
+                <button id="depense" className={depenseButtonClass} onClick={handleDepenseClick}> Dépense</button>
+                <button id="revenus" className={revenueButtonClass} onClick={handleRevenueClick}> Revenus</button>
             </div>
             <div>
                 <div className='infos_transaction'>
