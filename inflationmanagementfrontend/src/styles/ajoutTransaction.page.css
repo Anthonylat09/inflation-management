@@ -1,0 +1,46 @@
+.type_transaction_div {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.type_transaction {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: large;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    border-radius: 25px;
+}
+
+.infos_transaction {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: lightgray;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 500px;
+    height: 400px;
+    border-radius: 25px;
+}
+
+.active {
+    background-color: #FF7300;
+    color: white;
+}
+
+.inactive {
+    background-color: white;
+    color: black;
+}
