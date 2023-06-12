@@ -35,6 +35,15 @@
     border-radius: 25px;
 }
 
+.champ_formulaire {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .active {
     background-color: #FF7300;
     color: white;
