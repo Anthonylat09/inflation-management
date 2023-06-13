@@ -3,11 +3,19 @@ import BarreNavigationComponent from "../components/barreNavigation.component";
 import logo from '../logo.svg';
 import { useNavigate } from 'react-router';
 import '../styles/login.page.css'; // Import du fichier CSS externe
+import { useAuth } from '../contexts/authContext.context'
+import {authenticate, isAuthenticated} from "../services/authentification.service";
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const {
+    authUser,
+    setAuthUser,
+    isLoggedIn,
+    setIsLoggedIn
+  } = useAuth()
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -19,13 +27,17 @@ const LoginPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Reset the form
-    setEmail('');
-    setPassword('');
-    navigate("/budget");
+
+    // Vérification des informations de connexion
+    authenticate(email,password);
+    if (isAuthenticated())
+    {
+      setIsLoggedIn(true);
+      navigate("/budget");
+    }
+    else {
+      alert("Identifiants incorrects");
+    }
   };
 
   return (

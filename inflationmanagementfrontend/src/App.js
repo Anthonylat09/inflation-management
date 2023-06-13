@@ -6,10 +6,12 @@ import RegisterPage from "./pages/register.page";
 import BudgetPage from "./pages/budget.page"
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {AuthProvider} from './contexts/authContext.context'
 
 function App() {
     return (
-        <div className="App">
+        <AuthProvider>
+            <div className="App">
                 <BarreNavigationComponent />
                 <Routes>
                     <Route path="/" element={<AccueilPage />} />
@@ -17,7 +19,8 @@ function App() {
                     <Route path="/inscription" element={<RegisterPage />} />
                     <Route path="/budget" element={<BudgetPage/>}/>
                 </Routes>
-        </div>
+           </div>
+        </AuthProvider>
     );
 }
 

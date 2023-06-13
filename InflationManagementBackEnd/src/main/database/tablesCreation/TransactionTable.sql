@@ -1,4 +1,4 @@
-USE budgetbd; #mettre le nom de votre bd
+USE budgetDB; #mettre le nom de votre bd
 DROP TABLE IF EXISTS Transaction;
 CREATE TABLE Transaction (
                              id_transaction BIGINT PRIMARY KEY AUTO_INCREMENT,

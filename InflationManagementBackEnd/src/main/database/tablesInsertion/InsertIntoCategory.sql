@@ -1,4 +1,4 @@
-USE budgetbd; #mettre le nom de votre bd
+USE budgetDB; #mettre le nom de votre bd
 
 INSERT INTO Category (nom_categorie, budget_categorie, couleur_categorie, section)
 VALUES

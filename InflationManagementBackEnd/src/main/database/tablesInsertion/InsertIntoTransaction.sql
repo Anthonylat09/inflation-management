@@ -1,4 +1,4 @@
-USE budgetbd; #mettre le nom de votre bd
+-- USE budgetbd; #mettre le nom de votre bd
 
 INSERT INTO Transaction (nom_transaction, est_revenu, montant, categorie, date)
 VALUES
