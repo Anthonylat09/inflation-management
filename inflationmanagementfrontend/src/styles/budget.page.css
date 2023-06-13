@@ -32,6 +32,8 @@
 
 #side_text {
     display: inline-grid;
+    grid-row-gap: 25px;
+    font-size: 30px;
 }
 
 #categ_section {
@@ -59,4 +61,29 @@ div.square + div {
 
 div.pointille + div {
     margin: auto;
+}
+
+#programmer_restant {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 80px;
+}
+
+#programmer_restant > button {
+    width: 200px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+.orange_button {
+    background-color: #FF7300 !important;
+    color: white;
 }

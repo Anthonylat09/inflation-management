@@ -23,6 +23,6 @@
     text-decoration: underline;
 }
 
-span:hover {
+.barre_div span:hover {
     cursor: pointer;
 }
