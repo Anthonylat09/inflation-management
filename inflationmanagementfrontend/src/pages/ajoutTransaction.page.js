@@ -1,7 +1,7 @@
 import '../styles/ajoutTransaction.page.css'
 import '../App.css'
 import React, { useState } from 'react'
-export default function Page(){
+export default function AjoutTransactionPage(){
 
     const [revenueButtonClass, setRevenueButtonClass] = useState('type_transaction inactive');
     const [depenseButtonClass, setDepenseButtonClass] = useState('type_transaction active');
