@@ -1,6 +1,7 @@
 .App {
   background-image: url("http://localhost:3000/Sprinkle.svg");
   background-repeat: repeat;
+  min-height: 100vh;
 }
 
 .separator {
