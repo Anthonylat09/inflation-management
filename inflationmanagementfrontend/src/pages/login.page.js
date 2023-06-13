@@ -29,15 +29,18 @@ const LoginPage = () => {
     event.preventDefault();
 
     // Vérification des informations de connexion
-    authenticate(email,password);
-    if (isAuthenticated())
-    {
-      setIsLoggedIn(true);
-      navigate("/budget");
-    }
-    else {
-      alert("Identifiants incorrects");
-    }
+    authenticate(email,password).then(()=> {
+      if (isAuthenticated())
+      {
+        setIsLoggedIn(true);
+        navigate("/budget");
+      }
+      else {
+        alert("Identifiants incorrects");
+      }
+
+    })
+
   };
 
   return (
