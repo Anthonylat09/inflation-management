@@ -1,12 +1,12 @@
-import '../styles/carteCategorie.component.css';
+import '../styles/carteSection.component.css';
 import {AiOutlinePlusCircle} from 'react-icons/ai';
 
-export default function CarteCategorieComponent(props){
+export default function CarteSectionComponent(props){
     return(
         <div id="card">
             <h2>{props.cardTitle}</h2>
             <div className="separator"></div>
-            {/*{props.sousCategoriesListe.map((sous_cat)=>*/}
+            {/*{props.categoriesListe.map((sous_cat)=>*/}
             {/*    <div className="row">*/}
             {/*        <div>*/}
             {/*            <div className={`circle ${sous_cat.couleur}_circle` }></div>*/}

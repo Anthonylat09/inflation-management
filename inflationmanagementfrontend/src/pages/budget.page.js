@@ -1,5 +1,5 @@
 import PaginationComponent from '../components/pagination.component';
-import CarteCategorieComponent from '../components/carteCategorie.component';
+import CarteSectionComponent from '../components/carteSection.component';
 import '../styles/budget.page.css';
 import PieChartUtils from '../utils/pieChart.utils';
 import {useState} from 'react';
@@ -47,12 +47,12 @@ export default function BudgetPage() {
                 </div>
             </section>
             <div className={"categories"}>
-                <CarteCategorieComponent cardTitle={"Nourriture"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Test"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteSectionComponent cardTitle={"Nourriture"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                <CarteSectionComponent cardTitle={"Test"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                <CarteSectionComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                <CarteSectionComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                <CarteSectionComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                <CarteSectionComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
             </div>
 
         </div>
