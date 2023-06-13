@@ -47,12 +47,12 @@ export default function BudgetPage() {
                 </div>
             </section>
             <div className={"categories"}>
-                <CarteCategorieComponent cardTitle={"Nourriture"}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Test"}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Hola"}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Binks"}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Hola"}></CarteCategorieComponent>
-                <CarteCategorieComponent cardTitle={"Binks"}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Nourriture"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Test"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
+                <CarteCategorieComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteCategorieComponent>
             </div>
 
         </div>

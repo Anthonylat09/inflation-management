@@ -18,6 +18,11 @@
     text-align: center;
 }
 
+.remaining_amount {
+    margin: auto 5px auto auto;
+    text-align: center;
+}
+
 .row > div:first-child {
     display: flex;
 }
