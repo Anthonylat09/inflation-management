@@ -11,7 +11,7 @@ import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Comment;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,7 +25,7 @@ public class User {
     private Long idUser;
 
     @OneToMany
-    ArrayList<Transaction> userTransactions;
+    List<Transaction> userTransactions;
 
     @NotEmpty(message = "Nom requis")
     @NotNull(message = "Nom requis")
