@@ -30,4 +30,10 @@ public class Category {
     @Column(name = "budget_categorie")
     Double budgetCategorie;
 
+    @Column(name = "couleur_categorie")
+    String couleurCategorie;
+
+    @ManyToOne
+    @JoinColumn(name = "section")
+    Section sectionCategory;
 }
