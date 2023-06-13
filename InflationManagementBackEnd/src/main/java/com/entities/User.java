@@ -56,7 +56,7 @@ public class User {
     @Column(name = "password", nullable = false)
     String password;
 
-    @Comment("Budget de l'utilisateur")
+    @Comment("Budget de lutilisateur")
     @Column(name = "budget")
     Double budget;
 
