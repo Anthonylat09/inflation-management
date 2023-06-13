@@ -1,9 +1,26 @@
+<<<<<<< HEAD:inflationmanagementfrontend/src/pages/transactions.jsx
+=======
+import { useState,useEffect } from 'react';
+import BarreNavigationComponent from '../components/barreNavigation.component';
+>>>>>>> c969f79 (feat:IM-33 ajout du code de base pour recuperer les transactions du backend):inflationmanagementfrontend/src/pages/transactions.js
 import BarreTransactionComponent from '../components/barreTransaction.component';
 import '../App.css';
 import '../styles/accueil.page.css';
 import '../styles/transactions.css'
 
 export default function TransactionPage(){
+    const[transactions,setTransactions]=useState([])
+    /*
+    useEffect(()=> {
+        fetch("http://localhost:8080/forum/transactions",{
+            method:"GET"
+        }).then(res => res.json())
+          .then((result)=>{
+            setTransactions(result);
+          }
+          )
+    },[transactions])
+    */
     return(
         <div className="page_accueil">
             <BarreTransactionComponent/>
