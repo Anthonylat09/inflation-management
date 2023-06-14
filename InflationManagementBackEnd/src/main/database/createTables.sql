@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS User;
-CREATE TABLE User (
+DROP TABLE IF EXISTS user;
+CREATE TABLE user (
                       id_user BIGINT PRIMARY KEY AUTO_INCREMENT,
                       nom VARCHAR(255) NOT NULL,
                       prenom VARCHAR(255) NOT NULL,
@@ -9,14 +9,14 @@ CREATE TABLE User (
                       role VARCHAR(255) NOT NULL DEFAULT 'USER'
 );
 
-CREATE TABLE Section (
+CREATE TABLE section (
                          id_section BIGINT AUTO_INCREMENT PRIMARY KEY,
                          nom_section VARCHAR(255),
                          couleur_section VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS Category;
-CREATE TABLE Category (
+DROP TABLE IF EXISTS category;
+CREATE TABLE category (
                           id_categorie BIGINT PRIMARY KEY AUTO_INCREMENT,
                           nom_categorie VARCHAR(255) NOT NULL,
                           budget_categorie DOUBLE,
@@ -25,8 +25,8 @@ CREATE TABLE Category (
                           foreign key (section_id) references Section(id_section)
 );
 
-DROP TABLE IF EXISTS Transaction;
-CREATE TABLE Transaction (
+DROP TABLE IF EXISTS transaction;
+CREATE TABLE transaction (
                              id_transaction BIGINT PRIMARY KEY AUTO_INCREMENT,
                              nom_transaction VARCHAR(255) NOT NULL,
                              est_revenu TINYINT(1) NOT NULL,
