@@ -17,7 +17,7 @@ export async function authenticate(email, password) {
 }
 
 
-export function getCurrentLoggedUser() {
+export async function getCurrentLoggedUser() {
     return fetch("http://localhost:8080/authentication/current-logged-in", {
         method: "GET",
         headers: {Authorization: "Bearer " + localStorage.getItem('TOKEN')},
@@ -28,4 +28,8 @@ export function getCurrentLoggedUser() {
 
 export function isAuthenticated() {
     return localStorage.getItem('TOKEN') != null
+}
+
+export function signOut() {
+    localStorage.clear();
 }

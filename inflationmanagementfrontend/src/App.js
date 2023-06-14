@@ -8,6 +8,8 @@ import React from "react";
 import {Route, Routes} from "react-router-dom";
 import AuthProvider from './utils/authContext.context'
 import AuthenticationGuard from './utils/authentication.guard';
+import TransactionPage from './pages/transactions';
+import AjoutTransactionPage from './pages/ajoutTransactionPage';
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                     <Route path="/inscription" element={<RegisterPage />} />
                     <Route element={<AuthenticationGuard/>}>
                         <Route path="budget" element={<BudgetPage/>}/>
+                        <Route path={"transaction"} element={<TransactionPage/>}/>
+                        <Route path={"ajoutTransaction"} element={<AjoutTransactionPage/>}/>
                     </Route>
                 </Routes>
            </div>
