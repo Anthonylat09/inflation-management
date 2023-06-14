@@ -6,6 +6,8 @@ CREATE TABLE Transaction (
                              est_revenu TINYINT(1) NOT NULL,
                              montant DOUBLE NOT NULL,
                              categorie BIGINT NOT NULL,
-                             date DATE NOT NULL,
+                             date_transaction DATE NOT NULL,
                              FOREIGN KEY (categorie) REFERENCES Category(id_categorie)
 );
+
+
