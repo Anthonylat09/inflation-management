@@ -26,3 +26,19 @@
 .barre_div span:hover {
     cursor: pointer;
 }
+
+.buttons_div div {
+    display: flex;
+    gap: 20px;
+}
+
+#main_buttons {
+    margin: auto auto auto 0;
+    display: flex;
+    gap: 20px;
+}
+
+#main_buttons span:hover {
+    color: white;
+    text-decoration: underline;
+}

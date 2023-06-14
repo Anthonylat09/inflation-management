@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import BarreNavigationComponent from "../components/barreNavigation.component";
+import React, {useState} from 'react';
 import logo from '../logo.svg';
-import { useNavigate } from 'react-router';
+import {useNavigate} from 'react-router';
 import '../styles/login.page.css'; // Import du fichier CSS externe
+import {authenticate} from "../services/authentification.service";
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -19,13 +19,10 @@ const LoginPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Reset the form
-    setEmail('');
-    setPassword('');
-    navigate("/budget");
+    // Vérification des informations de connexion
+    authenticate(email,password).then(()=> {
+        navigate("/budget");
+    }).catch(()=>alert("Identifiants incorrects"));
   };
 
   return (
