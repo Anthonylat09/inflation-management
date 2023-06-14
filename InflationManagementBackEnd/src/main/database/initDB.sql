@@ -2,7 +2,7 @@
 -- USER
 INSERT INTO user (nom, prenom, email, password, budget, role)
 VALUES
-    ('John', 'Doe', 'john.doe@example.com', '$2a$12$f/JEL0SNp2gkYOkBwZOGGeci4tlcEqcJDNyGWEb10Ej2R.NOKA462', 1000.0, 'USER')
+    ('John', 'Doe', 'john.doe@example.com', '$2a$12$f/JEL0SNp2gkYOkBwZOGGeci4tlcEqcJDNyGWEb10Ej2R.NOKA462', 1000.0, 'USER'),
     ('Jane', 'Smith', 'jane.smith@example.com', '$2a$12$cugZO8.wqMFbHtSw44ai3uKlKpOzvDqLft/6ZK/hOP1c7wJ45vgSK', 2000.0, 'ADMIN');
 
 
