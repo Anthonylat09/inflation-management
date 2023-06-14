@@ -1,6 +1,6 @@
 package com.controllers;
 
-import com.annotations.IsAdmin;
+import com.annotations.IsAuthenticated;
 import com.entities.User;
 import com.services.UserService;
 import org.springframework.http.HttpStatus;
@@ -20,19 +20,21 @@ public class UserController {
         this.userService = userService;
     }
 
+    @IsAuthenticated
     @GetMapping("all")
     @ResponseBody
-    @IsAdmin
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.of(Optional.of(userService.getAllUsers()));
     }
 
+    @IsAuthenticated
     @GetMapping("{id}")
     @ResponseBody
     public ResponseEntity<User> getUserById(@PathVariable long id) {
         return ResponseEntity.of(Optional.of(userService.getUserById(id)));
     }
 
+    @IsAuthenticated
     @PostMapping
     @ResponseBody
     public ResponseEntity<User> createUser(@RequestBody User user) {
@@ -40,6 +42,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
+    @IsAuthenticated
     @PutMapping("{id}")
     @ResponseBody
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user) {
@@ -51,6 +54,7 @@ public class UserController {
         }
     }
 
+    @IsAuthenticated
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable long id) {
         boolean deleted = userService.deleteUser(id);

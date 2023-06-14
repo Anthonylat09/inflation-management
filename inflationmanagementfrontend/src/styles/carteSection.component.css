@@ -1,0 +1,45 @@
+#card {
+    background-color: #D5A55E;
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.circle + span, .ajout {
+    margin: auto;
+}
+
+.amount {
+    margin: auto 5px auto auto;
+    border-radius: 50px;
+    background-color: #D9D9D9;
+    width: 50px;
+    padding: 4px;
+    text-align: center;
+}
+
+.remaining_amount {
+    margin: auto 5px auto auto;
+    text-align: center;
+}
+
+.row > div:first-child {
+    display: flex;
+}
+
+
+
+.icon_plus {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-left: 5px;
+}
+
+div.sous_cat {
+    cursor: pointer;
+}
+
+/*.ajout {*/
+/*    margin-left: 50px;*/
+/*}*/
