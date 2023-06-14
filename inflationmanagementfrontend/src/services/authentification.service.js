@@ -11,13 +11,17 @@ export async function authenticate (email,password) {
     }
     else {
         localStorage.setItem('TOKEN',JSON.stringify(res.json()))
+        alert(JSON.stringify(res.json()))
     }})
 }
 
-export function getCurrentUser(token)
-{
-
+export function getCurrentLoggedUser() {
+    return fetch("http://localhost:8080/authentication/current-logged-in", {
+        method: "GET",
+        headers: { Authorization: "Bearer " + localStorage.getItem('TOKEN') },
+    }).then(res => res.json());
 }
+
 export function isAuthenticated()
 {
   return localStorage.getItem('TOKEN') != null

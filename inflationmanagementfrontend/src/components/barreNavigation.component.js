@@ -1,6 +1,7 @@
 import '../styles/barreNavigation.component.css';
 import { useNavigate } from 'react-router';
 import {useAuth} from '../contexts/authContext.context'
+import {isAuthenticated} from "../services/authentification.service";
 
 export default function BarreNavigationComponent() {
     const navigate = useNavigate();
@@ -29,8 +30,8 @@ export default function BarreNavigationComponent() {
                 <spa onClick={handleGoHome}>Inflabudget</spa>
             </div>
             <div className="buttons_div">
-                <span onClick={handleLoginClick}>{isLoggedIn?"Se déconnecter":"Se connecter"}</span>
-                <span onClick={handleSignUpClick}>{isLoggedIn ? "":"S'inscrire"}</span>
+                <span onClick={handleLoginClick}>{isAuthenticated()?"Se déconnecter":"Se connecter"}</span>
+                <span onClick={handleSignUpClick}>{isAuthenticated() ? "":"S'inscrire"}</span>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
--- USE budgetbd; #mettre le nom de votre bd
+USE budgetDB; #mettre le nom de votre bd
 
 INSERT INTO User (nom, prenom, email, password, budget, role)
 VALUES ('John', 'Doe', 'john.doe@example.com', '$2a$12$f/JEL0SNp2gkYOkBwZOGGeci4tlcEqcJDNyGWEb10Ej2R.NOKA462', 1000.0, 'USER');
