@@ -32,10 +32,4 @@ public class AuthenticationController {
         return currentLogger.map(ResponseEntity::ok).orElse(null);
     }
 
-    @GetMapping("admin")
-    public String getAdmin() {
-        return "admin";
-    }
-
-
 }

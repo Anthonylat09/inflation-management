@@ -1,5 +1,6 @@
 package com.controllers;
 
+import com.annotations.IsAuthenticated;
 import com.entities.Category;
 import com.services.CategoryService;
 import org.springframework.http.HttpStatus;
@@ -17,12 +18,14 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+    @IsAuthenticated
     @GetMapping("all")
     public ResponseEntity<List<Category>> getAllCategories() {
         List<Category> categories = categoryService.getAllCategories();
         return ResponseEntity.ok(categories);
     }
 
+    @IsAuthenticated
     @GetMapping("{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable long id) {
         Category category = categoryService.getCategoryById(id);
@@ -33,12 +36,14 @@ public class CategoryController {
         }
     }
 
+    @IsAuthenticated
     @PostMapping
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
         Category createdCategory = categoryService.createCategory(category);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
     }
 
+    @IsAuthenticated
     @PutMapping("{id}")
     public ResponseEntity<Category> updateCategory(@PathVariable long id, @RequestBody Category category) {
         Category updatedCategory = categoryService.updateCategory(id, category);
@@ -49,6 +54,7 @@ public class CategoryController {
         }
     }
 
+    @IsAuthenticated
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable long id) {
         boolean deleted = categoryService.deleteCategory(id);
