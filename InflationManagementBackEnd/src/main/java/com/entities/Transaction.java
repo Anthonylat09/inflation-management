@@ -1,5 +1,6 @@
 package com.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -13,7 +14,7 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
-@Table(name = "Transaction")
+@Table(name = "transaction")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,7 +49,7 @@ public class Transaction {
     @NotNull(message = "Categorie de transaction requise")
     @NotBlank(message = "Categorie de transaction requise")
     @Comment("Categorie de la transaction")
-    @JoinColumn(name = "categorie", nullable = false)
+    @JoinColumn(name = "id_categorie", nullable = false)
     Category categorieTransaction;
 
     @Temporal(TemporalType.DATE)
@@ -57,4 +58,8 @@ public class Transaction {
     @Column(name = "date", nullable = false)
     Date dateTransaction;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user", updatable = false)
+    @JsonIgnore
+    User user;
 }

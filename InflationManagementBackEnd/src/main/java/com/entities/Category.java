@@ -11,7 +11,7 @@ import org.hibernate.annotations.Comment;
 @Getter
 @Setter
 @Entity
-@Table(name = "Category")
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +34,6 @@ public class Category {
     String couleurCategorie;
 
     @ManyToOne
-    @JoinColumn(name = "section")
+    @JoinColumn(name = "section_id")
     Section sectionCategory;
 }

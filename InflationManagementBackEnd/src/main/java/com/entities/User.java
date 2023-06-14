@@ -11,21 +11,17 @@ import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Comment;
 
-import java.util.ArrayList;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Comment("Id de l'utilisateur")
     @Column(name = "id_user", nullable = false)
     private Long idUser;
-
-    @OneToMany
-    ArrayList<Transaction> userTransactions;
 
     @NotEmpty(message = "Nom requis")
     @NotNull(message = "Nom requis")
@@ -65,5 +61,4 @@ public class User {
     @Column(name = "role", nullable = false)
     @ColumnDefault(value = "USER")
     private RoleEnum role;
-
 }
