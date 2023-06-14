@@ -56,7 +56,7 @@ public class TransactionController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping
+    @GetMapping("transactions-between-dates")
     public List<Transaction> getTransactionsByDate(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
                                                    @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
         return transactionService.getTransactionByDate(startDate, endDate);

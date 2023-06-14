@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    public List<Transaction> findTransactionsByDate_DayIsBetween(Date startDate, Date endDate);
+    List<Transaction> findTransactionsByDateTransactionBetween(Date startDate, Date endDate);
 }
