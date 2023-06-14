@@ -1,16 +1,9 @@
 import '../styles/barreNavigation.component.css';
-import { useNavigate } from 'react-router';
-import {useAuth} from '../contexts/authContext.context'
+import {useNavigate} from 'react-router';
 import {isAuthenticated} from "../services/authentification.service";
 
 export default function BarreNavigationComponent() {
     const navigate = useNavigate();
-    const {
-        authUser,
-        setAuthUser,
-        isLoggedIn,
-        setIsLoggedIn
-    }  = useAuth()
 
 
     const handleLoginClick = () => {
