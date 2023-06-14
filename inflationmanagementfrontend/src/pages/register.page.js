@@ -22,11 +22,15 @@ const RegisterPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform form submission logic here
+    if (password !== confirmPassword) {
+      console.log("Les mots de passe ne correspondent pas.");
+      return;
+    }
+    // Reste de la logique de soumission du formulaire
     console.log('Email:', email);
     console.log('Password:', password);
     console.log('Confirm Password:', confirmPassword);
-    // Reset the form
+    // Réinitialisation du formulaire
     setEmail('');
     setPassword('');
     setConfirmPassword('');

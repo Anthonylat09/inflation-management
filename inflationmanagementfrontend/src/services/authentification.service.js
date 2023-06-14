@@ -11,7 +11,7 @@ export async function authenticate (email,password) {
     }
     else {
         localStorage.setItem('TOKEN',JSON.stringify(res.json()))
-        alert(JSON.stringify(res.json()))
+        alert(JSON.stringify(res))
     }})
 }
 
