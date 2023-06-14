@@ -9,6 +9,7 @@ CREATE TABLE user (
                       role VARCHAR(255) NOT NULL DEFAULT 'USER'
 );
 
+DROP TABLE IF EXISTS section;
 CREATE TABLE section (
                          id_section BIGINT AUTO_INCREMENT PRIMARY KEY,
                          nom_section VARCHAR(255),
@@ -22,7 +23,7 @@ CREATE TABLE category (
                           budget_categorie DOUBLE,
                           couleur_categorie VARCHAR(255),
                           section_id bigint,
-                          foreign key (section_id) references Section(id_section)
+                          foreign key (section_id) references section(id_section)
 );
 
 DROP TABLE IF EXISTS transaction;
@@ -34,6 +35,6 @@ CREATE TABLE transaction (
                              id_categorie BIGINT NOT NULL,
                              id_user BIGINT NOT NULL,
                              date DATE NOT NULL,
-                             FOREIGN KEY (id_categorie) REFERENCES Category(id_categorie),
-                             FOREIGN KEY  (id_user) REFERENCES User(id_user)
+                             FOREIGN KEY (id_categorie) REFERENCES category(id_categorie),
+                             FOREIGN KEY  (id_user) REFERENCES user(id_user)
 );
