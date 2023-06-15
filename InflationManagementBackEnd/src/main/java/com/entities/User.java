@@ -1,6 +1,5 @@
 package com.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.utils.enums.RoleEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -44,7 +43,6 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     String email;
 
-    @JsonIgnore
     @NotEmpty(message = "Mot de passe requis")
     @NotNull(message = "Mot de passe requis")
     @NotBlank(message = "Mot de passe requis")
