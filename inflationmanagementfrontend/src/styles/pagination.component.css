@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-button {
+#pagination button {
     background-color: #EF9F40;
     border: none;
     cursor: pointer;
