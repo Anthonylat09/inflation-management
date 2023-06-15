@@ -41,4 +41,13 @@ public class AuthenticationService {
     public Optional<User> getCurrentLoggedUser(Authentication authentication) {
         return Optional.ofNullable(this.userService.getUserByEmail((String) authentication.getPrincipal()));
     }
+
+    public User registerUser(User user) {
+        // Vérifier si l'utilisateur existe déjà dans la base de données
+        if (userService.existsByEmail(user.getEmail())) {
+            throw new IllegalArgumentException("Email déjà utilisé");
+        }
+        // Enregistrer l'utilisateur dans la base de données
+        return userService.createUser(user);
+    }
 }
