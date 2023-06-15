@@ -125,9 +125,10 @@ export default function TransactionPage() {
           <div className="transactions_div">
             <div>{transaction.dateTransaction}</div>
             <div className="long_separator"></div>
-            <div style={{ display: "flex" }}>
+            <div className="transaction_info">
               <div className="circle blue_circle"></div>
               <div>{transaction.nomTransaction}</div>
+              <div className="transaction_amount">{transaction.montantTransaction}€</div>
             </div>
           </div>
         ))}
