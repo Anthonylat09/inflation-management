@@ -2,6 +2,7 @@ package com.services;
 
 import com.entities.User;
 import com.repositories.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,18 +10,22 @@ import java.util.List;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(14);
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     public User createUser(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
     public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
+
+    public boolean existsByEmail(String email) { return userRepository.existsByEmail(email); }
 
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);
