@@ -52,3 +52,57 @@
     width: 400px;
     font-size: 18px;
 }
+.logo img {
+    width:150px;
+
+}
+.input-error {
+    border-color: red;
+}
+
+.input-error:focus {
+    box-shadow: 0 0 5px red;
+}
+.error-tooltip {
+    position: relative;
+}
+
+.error-tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.error-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: red transparent transparent transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.error-tooltip.error-visible::before,
+.error-tooltip.error-visible::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.error-tooltip.error-visible::after {
+    bottom: -10px;
+}
