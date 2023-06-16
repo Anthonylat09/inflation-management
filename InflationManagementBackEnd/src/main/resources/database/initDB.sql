@@ -2,29 +2,34 @@
 -- USER
 INSERT INTO user (nom, prenom, email, password, budget, role)
 VALUES
-    ('John', 'Doe', 'john.doe@example.com', '$2a$12$f/JEL0SNp2gkYOkBwZOGGeci4tlcEqcJDNyGWEb10Ej2R.NOKA462', 1000.0, 'USER'),
-    ('Jane', 'Smith', 'jane.smith@example.com', '$2a$12$cugZO8.wqMFbHtSw44ai3uKlKpOzvDqLft/6ZK/hOP1c7wJ45vgSK', 2000.0, 'ADMIN');
+    ('Eren', 'Jager', 'eren.jager@maria.com', '$2a$12$f/JEL0SNp2gkYOkBwZOGGeci4tlcEqcJDNyGWEb10Ej2R.NOKA462', 1000.0, 'USER'),
+    ('Jane', 'Smith', 'jane.smith@outlook.com', '$2a$12$cugZO8.wqMFbHtSw44ai3uKlKpOzvDqLft/6ZK/hOP1c7wJ45vgSK', 2000.0, 'USER');
 
 
 -- SECTION
-INSERT INTO section (nom_section, couleur_section)
+INSERT INTO section (id_section, nom_section, couleur_section)
 VALUES
-    ('Section 1', 'Rouge'),
-    ('Section 2', 'Jaune'),
-    ('Section 3', 'Orange');
+    (1, 'Nourriture', 'Vert'),
+    (2, 'Logement', 'Jaune'),
+    (3, 'Style de vie', 'Bleu'),
+    (4, 'Economies', 'Orange'),
+    (5, 'Revenus', 'Blanc');
 
 
 -- CATEGORY
-INSERT INTO category (nom_categorie, budget_categorie, couleur_categorie, section_id)
+INSERT INTO category (id_categorie, nom_categorie, budget_categorie, couleur_categorie, section_id)
 VALUES
-    ('Category 1', 1000.00, 'Rouge', 1),
-    ('Category 2', 2000.00, 'Rouge', 2),
-    ('Category 3', 3000.00, 'Vert', 3);
+    (1, 'Course', 14.5, 'orange', 1),
+    (2, 'Waste', 1.00, 'grey', 1),
+    (3, 'Loyer', 550, 'green', 2),
+    (4, 'Divertissement', 100, 'blue', 3),
+    (5, 'Epargne', 500, 'red', 4),
+    (6, 'Bourse', 650, 'yellow', 5);
 
 
 -- TRANSACTION
-INSERT INTO transaction (nom_transaction, est_revenu, montant, id_user, id_categorie, date)
+INSERT INTO transaction (id_transaction, nom_transaction, est_revenu, montant, id_user, id_categorie, date)
 VALUES
-    ('Transaction 1', TRUE, 100.00, 2, 1, '2023-06-01'),
-    ('Transaction 2', FALSE, 50.00, 2, 2, '2023-06-02'),
-    ('Transaction 3', TRUE, 200.00, 1, 1, '2023-06-03');
+    (1, 'Leclerc', FALSE, 14.5, 2, 1, '2023-06-01'),
+    (2, 'MaxiCoffee', FALSE, 1.00, 2, 2, '2023-06-02'),
+    (3, 'Bourse Juin', TRUE, 599, 1, 6, '2023-06-03');
