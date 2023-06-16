@@ -5,6 +5,8 @@ export default function PieChartUtils(props){
             width: 500,
             type: 'pie',
         },
+        colors : props.data.colors,
+        labels: props.data.names,
         responsive: [{
             breakpoint: 480,
             options: {
@@ -16,7 +18,7 @@ export default function PieChartUtils(props){
     }
     return(
         <div>
-            <ReactApexChart series={props.series} type="pie" width={500} options={options}/>
+            <ReactApexChart series={props.data.series} type="pie" width={500} options={options}/>
         </div>
     );
 }
