@@ -6,9 +6,10 @@ import {useState} from 'react';
 
 export default function BudgetPage() {
     const [isProgrammerButtonActive, activeProgrammerButton] = useState(true);
+    const [sections, setSections] = useState([])
     return (
         <div>
-            <PaginationComponent date={"Juin 2023"}></PaginationComponent>
+            <PaginationComponent></PaginationComponent>
             <div id="programmer_restant">
                 <button className={isProgrammerButtonActive ? 'orange_button' : ''} onClick={() => {
                     activeProgrammerButton(true)
