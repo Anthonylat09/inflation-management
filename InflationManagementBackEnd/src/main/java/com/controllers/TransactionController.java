@@ -1,10 +1,12 @@
 package com.controllers;
 
 import com.entities.Transaction;
+import com.entities.User;
 import com.services.TransactionService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -54,4 +56,13 @@ public class TransactionController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("transactions-between-dates")
+    public List<Transaction> getTransactionsByDate(@RequestParam("idUser") Long idUser,
+                                                   @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
+                                                   @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
+        return transactionService.getTransactionByDate(idUser ,startDate, endDate);
+    }
 }
+
+
