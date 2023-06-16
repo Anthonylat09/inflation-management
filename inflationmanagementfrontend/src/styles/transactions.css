@@ -26,3 +26,11 @@
     border-color: black;
     margin: 8px auto 8px auto;
 }
+
+.transaction_info {
+    display: flex;
+}
+
+.transaction_amount {
+    margin-left: auto;
+}
