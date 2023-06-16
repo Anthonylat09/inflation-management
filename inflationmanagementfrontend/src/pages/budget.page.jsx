@@ -16,7 +16,7 @@ export default function BudgetPage() {
                 </button>
                 <button className={isProgrammerButtonActive ? '' : 'orange_button'} onClick={()=>{activeProgrammerButton(false)}}>Restant</button>
             </div>
-            <section className={isProgrammerButtonActive ? '' : 'hide'}>
+            <section className={isProgrammerButtonActive ? 'budgetSection' : 'hide'}>
                 <div id="chart_section">
                     <div id="chart">
                         <PieChartUtils series={[44, 55, 13, 43]}></PieChartUtils>
