@@ -49,7 +49,7 @@ const LoginPage = () => {
                         <div>
                             <input
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Mot de passe"
                                 value={password}
                                 onChange={handlePasswordChange}
                                 required
