@@ -16,7 +16,7 @@ export default function BudgetPage() {
                 </button>
                 <button className={isProgrammerButtonActive ? '' : 'orange_button'} onClick={()=>{activeProgrammerButton(false)}}>Restant</button>
             </div>
-            <section className={isProgrammerButtonActive ? '' : 'hide'}>
+            <section className={isProgrammerButtonActive ? 'budgetSection' : 'hide'}>
                 <div id="chart_section">
                     <div id="chart">
                         <PieChartUtils series={[44, 55, 13, 43]}></PieChartUtils>
@@ -47,12 +47,10 @@ export default function BudgetPage() {
                 </div>
             </section>
             <div className={"categories"}>
-                <CarteSectionComponent cardTitle={"Nourriture"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
-                <CarteSectionComponent cardTitle={"Test"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
-                <CarteSectionComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
-                <CarteSectionComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
-                <CarteSectionComponent cardTitle={"Hola"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
-                <CarteSectionComponent cardTitle={"Binks"} isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>
+                {sections.map(section =>
+                    <CarteSectionComponent cardTitle={section.nomSection} categoryList={section.categoryList}
+                                           isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>)
+                }
             </div>
 
         </div>
