@@ -48,7 +48,7 @@ public class Transaction {
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Date de la transaction requise")
     @Comment("Date de la transaction")
-    @Column(name = "date", nullable = false)
+    @Column(name = "date_transaction", nullable = false)
     Date dateTransaction;
 
     @ManyToOne
