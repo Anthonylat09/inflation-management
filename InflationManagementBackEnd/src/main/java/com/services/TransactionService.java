@@ -39,6 +39,7 @@ public class TransactionService {
             transaction.setMontantTransaction(updatedTransaction.getMontantTransaction());
             transaction.setCategorieTransaction(updatedTransaction.getCategorieTransaction());
             transaction.setDateTransaction(updatedTransaction.getDateTransaction());
+            transaction.setUserTransaction(updatedTransaction.getUserTransaction());
             return transactionRepository.save(transaction);
         }
         return null;

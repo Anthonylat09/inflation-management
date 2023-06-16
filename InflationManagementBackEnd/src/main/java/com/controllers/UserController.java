@@ -35,6 +35,13 @@ public class UserController {
     }
 
     @IsAuthenticated
+    @GetMapping("email/{email}")
+    @ResponseBody
+    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
+        return ResponseEntity.of(Optional.of(userService.getUserByEmail(email)));
+    }
+
+    @IsAuthenticated
     @PostMapping
     @ResponseBody
     public ResponseEntity<User> createUser(@RequestBody User user) {

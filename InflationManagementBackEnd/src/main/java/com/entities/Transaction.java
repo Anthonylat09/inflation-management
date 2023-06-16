@@ -1,6 +1,5 @@
 package com.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -29,25 +28,19 @@ public class Transaction {
     @Column(name = "nom_transaction", nullable = false)
     String nomTransaction;
 
-    @NotEmpty(message = "Type de transaction requis")
     @NotNull(message = "Type de transaction requis")
-    @NotBlank(message = "Type de transaction requis")
     @Comment("Recette (1) ou depense (0)")
     @Column(name = "est_revenu", nullable = false)
     Boolean estRevenu;
 
-    @NotEmpty(message = "Montant de transaction requis")
     @NotNull(message = "Montant de transaction requis")
-    @NotBlank(message = "Montant de transaction requis")
     @Comment("Montant de la transaction")
     @Column(name = "montant", nullable = false)
     Double montantTransaction;
 
 
     @ManyToOne
-    @NotEmpty(message = "Categorie de transaction requise")
     @NotNull(message = "Categorie de transaction requise")
-    @NotBlank(message = "Categorie de transaction requise")
     @Comment("Categorie de la transaction")
     @JoinColumn(name = "id_categorie", nullable = false)
     Category categorieTransaction;
@@ -60,6 +53,5 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "id_user", updatable = false)
-    @JsonIgnore
-    User user;
+    User userTransaction;
 }

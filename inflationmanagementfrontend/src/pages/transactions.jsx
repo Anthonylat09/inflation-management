@@ -6,7 +6,12 @@ import "../styles/accueil.page.css";
 import "../styles/transactions.css";
 import { getTransactions } from "../services/transaction.service";
 import { authContext } from "../utils/authContext.context";
+import {useNavigate} from "react-router";
+
+
 export default function TransactionPage() {
+  const navigate = useNavigate();
+
   const [transactions, setTransactions] = useState([]);
   const {authUser} = useContext(authContext);
 
@@ -156,9 +161,7 @@ export default function TransactionPage() {
           </div>
         ))}
       </div>
-      <button className="ajout_transaction_button">
-        Ajouter une transaction
-      </button>
+      <button onClick={()=>navigate('/ajoutTransaction')} className='ajout_transaction_button'>Ajouter une transaction</button>
     </div>
   );
 }

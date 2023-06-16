@@ -36,12 +36,24 @@
 }
 
 .champ_formulaire {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.champ_formulaire img {
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.champ_formulaire div {
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
 }
 
 .active {
