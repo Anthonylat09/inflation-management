@@ -36,4 +36,10 @@ public class Category {
     @ManyToOne
     @JoinColumn(name = "section_id")
     Section sectionCategory;
+
+
+    public Category(){}
+    public Category(Long id) {
+        this.id = id;
+    }
 }
