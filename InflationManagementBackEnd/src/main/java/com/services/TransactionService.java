@@ -1,6 +1,7 @@
 package com.services;
 
 import com.entities.Transaction;
+import com.entities.User;
 import com.repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,8 @@ public class TransactionService {
         return transactionRepository.findById(id).orElse(null);
     }
 
-    public List<Transaction> getTransactionByDate(Date startDate, Date endDate) {
-        return transactionRepository.findTransactionsByDateTransactionBetween(startDate,endDate);
+    public List<Transaction> getTransactionByDate(Long idUser, Date startDate, Date endDate) {
+        return transactionRepository.findTransactionsByUser_IdUserAndDateTransactionBetween(idUser, startDate,endDate);
     }
 
     public List<Transaction> getAllTransactions() {

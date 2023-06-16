@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai';
 import '../styles/barreTransaction.component.css'
 import "../App.css";
 import "../styles/accueil.page.css";
 import "../styles/transactions.css";
 import { getTransactions } from "../services/transaction.service";
+import { authContext } from "../utils/authContext.context";
 export default function TransactionPage() {
   const [transactions, setTransactions] = useState([]);
+  const {authUser} = useContext(authContext);
 
   const [currentDate, setCurrentDate] = useState(new Date())
   const [monthYear, setMonthYear] = useState(currentDate.toLocaleString('default', { month: 'long', year: 'numeric' }));
@@ -79,8 +81,8 @@ export default function TransactionPage() {
     setMonthYear(currentMonthDate.toLocaleString('default', { month: 'long', year: 'numeric' }));
   }
   useEffect(() => {
-    getTransactions(startOfMonth, endOfMonth).then((tr) => setTransactions(tr));
-  }, [startOfMonth, endOfMonth]);
+    getTransactions(authUser.idUser,startOfMonth, endOfMonth).then((tr) => setTransactions(tr));
+  }, [authUser.idUser,startOfMonth, endOfMonth]);
 
   return (
     <div className="page_accueil">

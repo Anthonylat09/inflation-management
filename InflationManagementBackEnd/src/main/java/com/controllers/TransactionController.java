@@ -1,6 +1,7 @@
 package com.controllers;
 
 import com.entities.Transaction;
+import com.entities.User;
 import com.services.TransactionService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -57,9 +58,10 @@ public class TransactionController {
     }
 
     @GetMapping("transactions-between-dates")
-    public List<Transaction> getTransactionsByDate(@RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
+    public List<Transaction> getTransactionsByDate(@RequestParam("idUser") Long idUser,
+                                                   @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
                                                    @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
-        return transactionService.getTransactionByDate(startDate, endDate);
+        return transactionService.getTransactionByDate(idUser ,startDate, endDate);
     }
 }
 
