@@ -59,4 +59,11 @@ public class User {
     @Column(name = "role", nullable = false)
     @ColumnDefault(value = "USER")
     private RoleEnum role;
+
+
+    public User() {}
+
+    public User(Long id) {
+        this.idUser = id;
+    }
 }
