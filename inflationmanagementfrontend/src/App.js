@@ -21,7 +21,7 @@ function App() {
                     <Route path="/connexion" element={<LoginPage />} />
                     <Route path="/inscription" element={<RegisterPage />} />
                     <Route element={<AuthenticationGuard/>}>
-                        <Route path="budget" element={<BudgetPage/>}/>
+                        <Route path="/budget" element={<BudgetPage/>}/>
                         <Route path={"transaction"} element={<TransactionPage/>}/>
                         <Route path={"ajoutTransaction"} element={<AjoutTransactionPage/>}/>
                     </Route>
