@@ -143,7 +143,7 @@ const RegisterPage = () => {
               <div className="form-field">
                 <input
                     type="password"
-                    placeholder="Confirm Password"
+                    placeholder="Confirmer mot de passe"
                     value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
                     required

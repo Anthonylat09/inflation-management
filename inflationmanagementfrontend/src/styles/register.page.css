@@ -22,8 +22,9 @@
 }
 
 .card {
+    margin-top: 100px;
     background: lightgray;
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
     text-align: center;
 }
@@ -53,7 +54,7 @@
     font-size: 18px;
 }
 .logo img {
-    width:150px;
+    width:250px;
 
 }
 .input-error {

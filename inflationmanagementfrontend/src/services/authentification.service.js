@@ -1,21 +1,23 @@
 export async function authenticate(email, password) {
-    const user = {email, password}
+    const user = { email, password };
 
-    fetch("http://localhost:8080/authentication/login", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(user)
-    }).then(response => {
+    try {
+        const response = await fetch("http://localhost:8080/authentication/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(user),
+        });
+
         if (response.status === 403) {
-            alert("Authentification échouée")
-        } else {
-            response.json().then((result) => {
-                localStorage.setItem('TOKEN',result.authResponse);
-            });
+            throw new Error("Authentification échouée");
         }
-    })
-}
 
+        const result = await response.json();
+        localStorage.setItem("TOKEN", result.authResponse);
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
 
 export async function getCurrentLoggedUser() {
     return fetch("http://localhost:8080/authentication/current-logged-in", {
