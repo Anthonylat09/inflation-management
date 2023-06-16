@@ -24,6 +24,10 @@ export default function TransactionPage() {
     0
   ))
 
+  const [depenses, setDepenses] = useState(0)
+  const [revenus, setRevenus] = useState(0)
+  const [solde, setSolde] = useState(0)
+
   function handleLeftButtonClick(e) {
     e.preventDefault();
     
@@ -84,6 +88,23 @@ export default function TransactionPage() {
     getTransactions(authUser.idUser,startOfMonth, endOfMonth).then((tr) => setTransactions(tr));
   }, [authUser.idUser,startOfMonth, endOfMonth]);
 
+  useEffect(() => {
+    let totalRevenus = 0;
+    let totalDepenses = 0;
+    if (transactions.length === 0){
+      setRevenus(0)
+      setDepenses(0)
+      setSolde(0)
+    }
+    for (let i = 0; i < transactions.length; i++){
+      if(transactions[i].estRevenu) totalRevenus += transactions[i].montantTransaction
+      else totalDepenses += transactions[i].montantTransaction
+      setRevenus(totalRevenus)
+      setDepenses(totalDepenses)
+      setSolde(totalRevenus - totalDepenses)
+    }
+  }, [transactions, monthYear]);
+
   return (
     <div className="page_accueil">
       <div className="barreTr_div">
@@ -91,21 +112,21 @@ export default function TransactionPage() {
           <div className="revenus_div">
             <span>
               Revenus <br />
-              {}
+              {revenus}€
             </span>
           </div>
           <div className="depenses_div">
             <span>
               Dépenses
               <br />
-              {}
+              {depenses}€
             </span>
           </div>
           <div className="solde_div">
             <span>
               Solde
               <br />
-              {}
+              {solde}€
             </span>
           </div>
         </div>
@@ -115,7 +136,7 @@ export default function TransactionPage() {
           </button>
           <span>
             {monthYear}
-            <br />{transactions.length} transacions
+            <br />{transactions.length} transactions
           </span>
           <button id="right_button" onClick={handleRightButtonClick}>
             <AiOutlineArrowRight />
