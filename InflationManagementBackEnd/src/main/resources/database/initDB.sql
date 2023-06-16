@@ -28,7 +28,7 @@ VALUES
 
 
 -- TRANSACTION
-INSERT INTO transaction (id_transaction, nom_transaction, est_revenu, montant, id_user, id_categorie, date)
+INSERT INTO transaction (id_transaction, nom_transaction, est_revenu, montant, id_user, id_categorie, date_transaction)
 VALUES
     (1, 'Leclerc', FALSE, 14.5, 2, 1, '2023-06-01'),
     (2, 'MaxiCoffee', FALSE, 1.00, 2, 2, '2023-06-02'),
