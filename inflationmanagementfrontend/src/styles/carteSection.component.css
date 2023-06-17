@@ -29,17 +29,57 @@
 
 
 
-.icon_plus {
+.icon_plus, .ok {
     width: 30px;
     height: 30px;
     margin-top: auto;
     margin-left: 5px;
 }
 
+.ok {
+    color: #24C35A;
+}
+
 div.sous_cat {
     cursor: pointer;
 }
 
-/*.ajout {*/
-/*    margin-left: 50px;*/
-/*}*/
+#cat_name_input {
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin: auto;
+    background-color: #D5A55E;
+    height: 30px;
+}
+
+#cat_name_input:focus {
+    outline: none;
+}
+
+input.amount {
+    border: none;
+}
+
+input.amount:focus {
+    outline: none;
+}
+
+#color_input_div {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 9999px;
+    margin-top: auto;
+    margin-left: 5px;
+    background-color: black;
+    border-color: black;
+}
+
+#color_input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+

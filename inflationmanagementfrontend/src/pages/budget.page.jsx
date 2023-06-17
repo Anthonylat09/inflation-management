@@ -63,7 +63,10 @@ export default function BudgetPage() {
                         sections.map(section => {
                             return (
                                 <>
-                                    <div className={`square ${section.couleurSection}_circle`}></div>
+                                    <div className={`square`} style={{
+                                        backgroundColor: `${section.couleurSection}`,
+                                        borderColor: `${section.couleurSection}`
+                                    }}></div>
                                     <div>{section.nomSection}</div>
                                     <div className="pointille"></div>
                                     <div>{section.budgetTotal}</div>
@@ -75,7 +78,7 @@ export default function BudgetPage() {
             </section>
             <div className={"categories"}>
                 {sections.map(section =>
-                    <CarteSectionComponent cardTitle={section.nomSection} categoryList={section.categoryList}
+                    <CarteSectionComponent cardTitle={section.nomSection} categoryList={section.categoryList} section={section}
                                            isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>)
                 }
             </div>
