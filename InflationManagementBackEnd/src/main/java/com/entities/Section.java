@@ -13,7 +13,7 @@ import java.util.Objects;
 @Table(name = "section")
 public class Section {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_section", nullable = false)
     private Long id;
     @Column(name = "nom_section")
