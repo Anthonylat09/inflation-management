@@ -3,6 +3,9 @@ package com.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.Hibernate;
+
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -17,4 +20,13 @@ public class Section {
     String nomSection;
     @Column(name = "couleur_section")
     String couleurSection;
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || Hibernate.getClass(this) != Hibernate.getClass(obj)) return false;
+        Section section = (Section) obj;
+        return Objects.equals(getId(), section.getId());
+    }
 }
