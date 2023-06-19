@@ -28,10 +28,9 @@ export default function CarteSectionComponent(props) {
         const category = {
             nomCategorie: catName,
             budgetCategorie: amount,
-            couleurCategorie: color,
+            couleurCategorie: color === '' ? "#000000" : color,
             sectionCategory : props.section
         }
-
         createCategory(category).then(r=> {
             props.categoryList.push(r);
             setAddingCategory(false)
@@ -62,7 +61,7 @@ export default function CarteSectionComponent(props) {
                 <div className="row">
                     <div>
                         <div id={"color_input_div"} ref={colorInputDivRef}>
-                            <input type="color" id={"color_input"} onChange={handleColorInput}/>
+                            <input type="color" id={"color_input"} onChange={handleColorInput} value={"#FF0000"}/>
                         </div>
                         <input type="text" id={"cat_name_input"} placeholder={"Nom de la catégorie"} onChange={handleCatNameInput}/>
                         <input type="text" className={"amount"} placeholder={"0 €"} onChange={handleAmountInput}/>
