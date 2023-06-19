@@ -14,7 +14,7 @@ import org.hibernate.annotations.Comment;
 @Table(name = "category")
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Comment("Id de la catégorie")
     @Column(name = "id_categorie", nullable = false)
     private Long id;

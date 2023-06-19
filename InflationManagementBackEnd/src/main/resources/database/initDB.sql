@@ -9,12 +9,11 @@ VALUES
 -- SECTION
 INSERT INTO section (id_section, nom_section, couleur_section)
 VALUES
-    (1, 'Nourriture', 'Vert'),
-    (2, 'Logement', 'Jaune'),
-    (3, 'Style de vie', 'Bleu'),
-    (4, 'Economies', 'Orange'),
-    (5, 'Revenus', 'Blanc');
-
+    (1, 'Nourriture', '24C35A'),
+    (2, 'Logement', 'FF0000FF'),
+    (3, 'Style de vie', '2476C3'),
+    (4, 'Economies', 'FF7300'),
+    (5, 'Revenus', 'B57EDC');
 
 -- CATEGORY
 INSERT INTO category (id_categorie, nom_categorie, budget_categorie, couleur_categorie, section_id)

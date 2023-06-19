@@ -16,7 +16,7 @@ import java.util.Date;
 @Table(name = "transaction")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Comment("Id de la transaction")
     @Column(name = "id_transaction", nullable = false)
     private Long idTransaction;
