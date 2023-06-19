@@ -4,7 +4,7 @@ export default function AccueilPage(){
     return(
         <div className="page_accueil">
             <img src="http://localhost:3000/logo.svg" id="logo"/>
-            <div>
+            <section>
                 <div className="blobs_div">
                     <img src="http://localhost:3000/undraw_personal_finance_re_ie6k.svg"/>
                     <img src="http://localhost:3000/blob.svg" className="blobs"/>
@@ -14,7 +14,7 @@ export default function AccueilPage(){
                     <p>Suivez vos revenus, gérez vos dépenses. Planifiez votre avenir financier en toute simplicité.
                     Faites face aux défis de l'inflation en prenant des décisions éclairées pour optimiser votre budget.</p>
                 </div>
-            </div>
+            </section>
             <section>
                 <div className="side_text">
                     <h2>Découvrez les statistiques essentielles</h2>

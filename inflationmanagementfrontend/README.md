@@ -1,5 +1,6 @@
-# Getting Started with Create React App
-
+# Lancement du Backup
+Pour faire trourner la backend, il faut d'abord :
+### Créer une base de donné
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
