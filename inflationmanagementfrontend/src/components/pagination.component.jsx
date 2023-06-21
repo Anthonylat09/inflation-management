@@ -3,7 +3,7 @@ import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai';
 import {useEffect, useState} from "react";
 import {getTransactions} from "../services/transaction.service";
 
-export default function PaginationComponent(props){
+export default function PaginationComponent(){
     const [currentDate, setCurrentDate] = useState(new Date())
     const [monthYear, setMonthYear] = useState(currentDate.toLocaleString('default', { month: 'long', year: 'numeric' }));
 
