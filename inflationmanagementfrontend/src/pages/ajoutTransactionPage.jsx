@@ -1,30 +1,11 @@
 import '../styles/ajoutTransaction.page.css';
 import '../App.css';
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-const getCurrentLoggedUserId = async () => {
-    try {
-        const response = await fetch(`http://localhost:8080/authentication/current-logged-in`, {
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('TOKEN'),
-            },
-        });
-
-        if (response.ok) {
-            const userJson = await response.json();
-            return userJson.idUser;
-        } else {
-            throw new Error('Failed to fetch user ' + response.status);
-        }
-    } catch (error) {
-        console.error(error);
-    }
-};
+import {authContext} from '../utils/authContext.context';
 
 export default function AjoutTransactionPage() {
+    const {authUser} = useContext(authContext);
     const [transaction, setTransaction] = useState({
         nomTransaction: '',
         categorieTransaction: '', // Utiliser l'ID de la catégorie au lieu du nom
@@ -33,9 +14,12 @@ export default function AjoutTransactionPage() {
         estRevenu: '',
         userTransaction: '',
     });
-
     const [categories, setCategories] = useState([]); // État pour stocker les catégories
-    const [userId, setUserId] = useState(''); // Ajout de l'état userId
+    const [errors, setErrors] = useState({}); // État pour stocker les erreurs de validation
+    const [revenueButtonClass, setRevenueButtonClass] = useState('type_transaction inactive');
+    const [depenseButtonClass, setDepenseButtonClass] = useState('type_transaction active');
+    const [isRevenu, setisRevenu] = useState(0);
+    const navigate = useNavigate();
 
     // Charger les catégories depuis le backend lors du montage du composant
     useEffect(() => {
@@ -60,24 +44,8 @@ export default function AjoutTransactionPage() {
             });
     }, []);
 
-    useEffect(() => {
-        async function fetchLoggedUserId() {
-            try {
-                const userId = await getCurrentLoggedUserId();
-                setUserId(userId);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchLoggedUserId();
-    }, []);
 
 
-    const [errors, setErrors] = useState({}); // État pour stocker les erreurs de validation
-    const [revenueButtonClass, setRevenueButtonClass] = useState('type_transaction inactive');
-    const [depenseButtonClass, setDepenseButtonClass] = useState('type_transaction active');
-    const [isRevenu, setisRevenu] = useState(0);
-    const navigate = useNavigate();
 
 
     const handleInputChange = (e) => {
@@ -142,7 +110,7 @@ export default function AjoutTransactionPage() {
             dateTransaction: transaction.dateTransaction,
             montantTransaction: transaction.montantTransaction,
             estRevenu: isRevenu,
-            userTransaction: userId,
+            userTransaction: authUser.idUser,
         };
 
         fetch('http://localhost:8080/transactions', {
