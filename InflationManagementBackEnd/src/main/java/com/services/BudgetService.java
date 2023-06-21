@@ -10,6 +10,7 @@ import com.utils.dto.SectionDto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,15 +25,19 @@ public class BudgetService {
         this.transactionRepository = transactionRepository;
     }
 
-    public List<SectionDto> getAllSectionsWithCategories() {
+    public List<SectionDto> getAllSectionsWithCategories(Long idUser, Date startDate, Date endDate) {
         var sectionList = sectionRepository.findAll();
         List<SectionDto> sectionDtoList = new ArrayList<>();
         sectionList.forEach(section -> {
-            var categList = categoryRepository.findAllBySectionCategoryOrderByNomCategorie(section);
+            var categList = categoryRepository.findAllBySectionCategoryAndUserCategory_IdUserOrderByNomCategorie(section,idUser);
             List<CategoryDto> categoryDtoList = new ArrayList<>();
             categList.forEach(category -> {
                 double sumTransactions = 0.;
-                var transactionList = transactionRepository.findAllByCategorieTransaction(category);
+                var transactionList = transactionRepository.findTransactionByUserTransaction_IdUserAndCategorieTransactionAndDateTransactionBetween(
+                        idUser,
+                        category,
+                        startDate,
+                        endDate);
 
                 for (Transaction transaction :
                         transactionList) {
@@ -64,20 +69,15 @@ public class BudgetService {
         return sectionDtoList;
     }
 
-    public PieChartDto getData(){
-        var sections = getAllSectionsWithCategories();
+    public PieChartDto getData(Long idUser, Date startDate, Date endDate){
+        var sections = getAllSectionsWithCategories(idUser,startDate,endDate);
         List<Double> series = new ArrayList<>();
         List<String> colors = new ArrayList<>();
         List<String> names = new ArrayList<>();
         for (SectionDto sectionDto:
              sections) {
             series.add(sectionDto.getBudgetTotal());
-            switch (sectionDto.getCouleurSection()) {
-                case "orange" -> colors.add("#FF7300");
-                case "green" -> colors.add("#24C35A");
-                case "blue" -> colors.add("#2476C3");
-                case "red" -> colors.add("#FF0000FF");
-            }
+            colors.add(sectionDto.getCouleurSection());
             names.add(sectionDto.getNomSection());
         }
         return new PieChartDto(series,colors,names);

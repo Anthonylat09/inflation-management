@@ -37,8 +37,14 @@ public class Category {
     @JoinColumn(name = "section_id")
     Section sectionCategory;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User userCategory;
 
-    public Category(){}
+
+    public Category() {
+    }
+
     public Category(Long id) {
         this.id = id;
     }
