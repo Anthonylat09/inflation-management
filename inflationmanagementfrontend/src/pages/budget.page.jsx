@@ -1,4 +1,3 @@
-import PaginationComponent from '../components/pagination.component';
 import CarteSectionComponent from '../components/carteSection.component';
 import '../styles/budget.page.css';
 import '../styles/pagination.component.css';
