@@ -6,7 +6,7 @@ import {authContext} from '../utils/authContext.context';
 
 export default function BarreNavigationComponent() {
     const navigate = useNavigate();
-    const {authUser} = useContext(authContext);
+    const {authUser, setAuthUser} = useContext(authContext);
 
 
     const handleLoginClick = () => {
@@ -23,22 +23,24 @@ export default function BarreNavigationComponent() {
             <div className="logo_div">
                 <span onClick={goHome}>Inflabudget</span>
             </div>
-            {isAuthenticated() && (authUser && authUser.idUser)?
+            {isAuthenticated() && (authUser && authUser.idUser) ?
                 <div id="main_buttons">
-                    <span onClick={()=>navigate('transaction')}>Transactions</span>
-                    <span onClick={()=>navigate('budget')}>Budget</span>
-                </div>: ''
+                    <span onClick={() => navigate('transaction')}>Transactions</span>
+                    <span onClick={() => navigate('budget')}>Budget</span>
+                </div> : ''
             }
             <div className="buttons_div">
-                {isAuthenticated()  && (authUser && authUser.idUser)?
-                    <span onClick={()=> {
-                        signOut(); goHome();
+                {isAuthenticated() && (authUser && authUser.idUser) ?
+                    <span onClick={() => {
+                        signOut();
+                        setAuthUser({});
+                        goHome();
                     }}>Se déconnecter</span> :
                     <div>
                         <span onClick={handleLoginClick}>Se connecter</span>
                         <span onClick={handleSignUpClick}>S'inscrire</span>
                     </div>
-                    }
+                }
 
             </div>
         </div>
