@@ -36,7 +36,7 @@ CREATE TABLE transaction (
                              montant DOUBLE NOT NULL,
                              id_categorie BIGINT NOT NULL,
                              id_user BIGINT NOT NULL,
-                             date DATE NOT NULL,
+                             date_transaction DATE NOT NULL,
                              FOREIGN KEY (id_categorie) REFERENCES category(id_categorie),
                              FOREIGN KEY  (id_user) REFERENCES user(id_user)
 );
