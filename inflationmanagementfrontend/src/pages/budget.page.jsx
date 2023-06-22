@@ -1,19 +1,74 @@
-import PaginationComponent from '../components/pagination.component';
 import CarteSectionComponent from '../components/carteSection.component';
 import '../styles/budget.page.css';
+import '../styles/pagination.component.css';
 import PieChartUtils from '../utils/pieChart.utils';
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {getAllSectionsWithCategories, getPieChartData} from '../services/budget.service';
+import {authContext} from '../utils/authContext.context';
+import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai';
 
 export default function BudgetPage() {
+    const {authUser} = useContext(authContext);
     const [isProgrammerButtonActive, activeProgrammerButton] = useState(true);
     const [sections, setSections] = useState([]);
     const [totalBudget, setTotalBudget] = useState(0.);
     const [data, setData] = useState({});
     const [totalRestant, setTotalRestant] = useState(0.);
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const [monthYear, setMonthYear] = useState(currentDate.toLocaleString('default', { month: 'long', year: 'numeric' }));
+    const [startOfMonth, setStartOfMonth] = useState(new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        1
+    ));
+    const [endOfMonth, setEndOfMonth] = useState(new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0
+    ));
+
+    const handlePaginationButtonClick = (side)=>{
+
+        // Create a new Date object based on the current month
+        const currentMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+
+        switch (side){
+            case 'left':
+                // Subtract one month from the current month
+                currentMonthDate.setMonth(currentMonthDate.getMonth() - 1);
+                break;
+            case 'right':
+                // Subtract one month from the current month
+                currentMonthDate.setMonth(currentMonthDate.getMonth() + 1);
+                break;
+            default:
+                break;
+        }
+
+        // Update the currentDate state with the new date
+        setCurrentDate(currentMonthDate);
+
+        setStartOfMonth(new Date(
+            currentMonthDate.getFullYear(),
+            currentMonthDate.getMonth(),
+            0
+        ))
+
+        setEndOfMonth(new Date(
+            currentMonthDate.getFullYear(),
+            currentMonthDate.getMonth() + 1,
+            0
+        ))
+
+        // Update the monthYear state with the new month and year
+        setMonthYear(currentMonthDate.toLocaleString('default', { month: 'long', year: 'numeric' }));
+
+    }
+
+
     useEffect(() => {
-        getPieChartData().then(data => setData(data));
-        getAllSectionsWithCategories().then(sections => {
+        getPieChartData(authUser.idUser, startOfMonth, endOfMonth).then(data => setData(data));
+        getAllSectionsWithCategories(authUser.idUser, startOfMonth, endOfMonth).then(sections => {
             // Set the sections
             setSections(sections);
             //Set totalBudget
@@ -33,10 +88,18 @@ export default function BudgetPage() {
             }, 0.)
             setTotalRestant(rest);
         });
-    }, [])
+    }, [startOfMonth,endOfMonth])
     return (
         <div>
-            <PaginationComponent date={new Date().toLocaleDateString('fr')}></PaginationComponent>
+            <div id="pagination">
+                <button id="left_button" onClick={()=>handlePaginationButtonClick('left')}>
+                    <AiOutlineArrowLeft/>
+                </button>
+                <span>{monthYear}</span>
+                <button id="right_button" onClick={()=>handlePaginationButtonClick('right')}>
+                    <AiOutlineArrowRight/>
+                </button>
+            </div>
             <div id="programmer_restant">
                 <button className={isProgrammerButtonActive ? 'orange_button' : ''} onClick={() => {
                     activeProgrammerButton(true)
@@ -78,7 +141,8 @@ export default function BudgetPage() {
             </section>
             <div className={"categories"}>
                 {sections.map(section =>
-                    <CarteSectionComponent cardTitle={section.nomSection} categoryList={section.categoryList} section={section}
+                    <CarteSectionComponent cardTitle={section.nomSection} categoryList={section.categoryList}
+                                           section={section}
                                            isProgrammerButtonActive={isProgrammerButtonActive}></CarteSectionComponent>)
                 }
             </div>

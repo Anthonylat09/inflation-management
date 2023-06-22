@@ -23,7 +23,9 @@ CREATE TABLE category (
                           budget_categorie DOUBLE,
                           couleur_categorie VARCHAR(255),
                           section_id bigint,
-                          foreign key (section_id) references section(id_section)
+                          user_id bigint,
+                          foreign key (section_id) references section(id_section),
+                          foreign key (user_id) references user(id_user)
 );
 
 DROP TABLE IF EXISTS transaction;
@@ -34,7 +36,7 @@ CREATE TABLE transaction (
                              montant DOUBLE NOT NULL,
                              id_categorie BIGINT NOT NULL,
                              id_user BIGINT NOT NULL,
-                             date DATE NOT NULL,
+                             date_transaction DATE NOT NULL,
                              FOREIGN KEY (id_categorie) REFERENCES category(id_categorie),
                              FOREIGN KEY  (id_user) REFERENCES user(id_user)
 );
