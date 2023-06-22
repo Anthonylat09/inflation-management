@@ -1,10 +1,12 @@
 import '../styles/carteSection.component.css';
 import {AiOutlinePlusCircle} from 'react-icons/ai';
-import {useRef, useState} from 'react';
+import {useContext, useRef, useState} from 'react';
 import {MdGppGood} from 'react-icons/md';
 import {createCategory} from '../services/category.service';
+import {authContext} from '../utils/authContext.context';
 
 export default function CarteSectionComponent(props) {
+    const {authUser} = useContext(authContext);
     const [amount, setAmount] = useState(0.);
     const [catName, setCatName] = useState('');
     const [color, setColor] = useState('');
@@ -29,6 +31,7 @@ export default function CarteSectionComponent(props) {
             nomCategorie: catName,
             budgetCategorie: amount,
             couleurCategorie: color === '' ? "#000000" : color,
+            userCategory: authUser,
             sectionCategory : props.section
         }
         createCategory(category).then(r=> {

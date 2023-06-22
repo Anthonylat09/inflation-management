@@ -155,7 +155,10 @@ export default function TransactionPage() {
                         <div>{transaction.dateTransaction}</div>
                         <div className="long_separator"></div>
                         <div className="transaction_info">
-                            <div className="circle blue_circle"></div>
+                            <div className="circle blue_circle" style={{
+                                backgroundColor: `${transaction.categorieTransaction.couleurCategorie}`,
+                                borderColor: `${transaction.categorieTransaction.couleurCategorie}`
+                            }}></div>
                             <div>{transaction.nomTransaction}</div>
                             <div className="transaction_amount">{transaction.montantTransaction}€</div>
                         </div>

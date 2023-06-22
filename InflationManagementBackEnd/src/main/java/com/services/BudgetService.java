@@ -29,7 +29,7 @@ public class BudgetService {
         var sectionList = sectionRepository.findAll();
         List<SectionDto> sectionDtoList = new ArrayList<>();
         sectionList.forEach(section -> {
-            var categList = categoryRepository.findAllBySectionCategoryAndUserCategory_IdUserOrderByNomCategorie(section,idUser);
+            var categList = categoryRepository.findAllBySectionCategoryAndUserCategory_IdUserOrderByNomCategorie(section, idUser);
             List<CategoryDto> categoryDtoList = new ArrayList<>();
             categList.forEach(category -> {
                 double sumTransactions = 0.;
@@ -41,7 +41,8 @@ public class BudgetService {
 
                 for (Transaction transaction :
                         transactionList) {
-                    sumTransactions += transaction.getMontantTransaction();
+                    if (!transaction.getCategorieTransaction().getSectionCategory().getNomSection().equals("Revenus"))
+                        sumTransactions += transaction.getMontantTransaction();
                 }
 
                 categoryDtoList.add(new CategoryDto(
@@ -69,18 +70,18 @@ public class BudgetService {
         return sectionDtoList;
     }
 
-    public PieChartDto getData(Long idUser, Date startDate, Date endDate){
-        var sections = getAllSectionsWithCategories(idUser,startDate,endDate);
+    public PieChartDto getData(Long idUser, Date startDate, Date endDate) {
+        var sections = getAllSectionsWithCategories(idUser, startDate, endDate);
         List<Double> series = new ArrayList<>();
         List<String> colors = new ArrayList<>();
         List<String> names = new ArrayList<>();
-        for (SectionDto sectionDto:
-             sections) {
+        for (SectionDto sectionDto :
+                sections) {
             series.add(sectionDto.getBudgetTotal());
             colors.add(sectionDto.getCouleurSection());
             names.add(sectionDto.getNomSection());
         }
-        return new PieChartDto(series,colors,names);
+        return new PieChartDto(series, colors, names);
     }
 
 }

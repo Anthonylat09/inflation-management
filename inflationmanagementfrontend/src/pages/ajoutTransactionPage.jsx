@@ -200,7 +200,7 @@ export default function AjoutTransactionPage() {
                         <div className="champ_formulaire">
                             <img src="http://localhost:3000/calendar.svg" />
                             <input
-                                type="text"
+                                type="date"
                                 name="dateTransaction"
                                 value={transaction.dateTransaction || ''}
                                 onChange={handleInputChange}
