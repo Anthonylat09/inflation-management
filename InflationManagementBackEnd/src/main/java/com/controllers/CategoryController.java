@@ -37,6 +37,17 @@ public class CategoryController {
     }
 
     @IsAuthenticated
+    @GetMapping("user/{idUser}")
+    public ResponseEntity<List<Category>> getCategoriesByUserId(@PathVariable long idUser) {
+        List<Category> allCategoriesByUsers = categoryService.getAllCategoriesByUsers(idUser);
+        if (allCategoriesByUsers != null) {
+            return ResponseEntity.ok(allCategoriesByUsers);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @IsAuthenticated
     @PostMapping
     public ResponseEntity<Category> createCategory(@RequestBody Category category) {
         Category createdCategory = categoryService.createCategory(category);

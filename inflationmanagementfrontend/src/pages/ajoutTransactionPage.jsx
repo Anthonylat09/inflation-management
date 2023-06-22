@@ -8,7 +8,7 @@ export default function AjoutTransactionPage() {
     const {authUser} = useContext(authContext);
     const [transaction, setTransaction] = useState({
         nomTransaction: '',
-        categorieTransaction: '', // Utiliser l'ID de la catégorie au lieu du nom
+        categorieTransaction: '',
         dateTransaction: '',
         montantTransaction: '',
         estRevenu: '',
@@ -23,7 +23,8 @@ export default function AjoutTransactionPage() {
 
     // Charger les catégories depuis le backend lors du montage du composant
     useEffect(() => {
-        fetch('http://localhost:8080/categories/all', {
+        console.log(authUser.idUser);
+        fetch(`http://localhost:8080/categories/user/${authUser.idUser}`, {
             method: 'GET',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('TOKEN'),
