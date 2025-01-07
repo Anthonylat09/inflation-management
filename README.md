@@ -43,6 +43,7 @@ Assurez-vous que votre utilisateur est ajouté au groupe Docker afin d'éviter l
 Exécutez les commandes suivantes **une seule fois** :
 
 ```bash
+sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 ```
@@ -56,7 +57,7 @@ Cela permet à votre utilisateur d'exécuter des commandes Docker sans utiliser 
 Une fois les permissions configurées, lancez le projet avec :
 
 ```bash
-docker-compose up --build
+sudo docker-compose up --build
 ```
 
 Cette commande :
